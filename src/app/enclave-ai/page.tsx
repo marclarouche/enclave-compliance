@@ -2,6 +2,14 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Enclave-AI",
+  description:
+    "Enclave-AI maps your AI systems against NIST AI RMF, the EU AI Act, and state laws like Colorado SB-205 and New York's AI law, with policy evidence built in.",
+  openGraph: {
+    title: "Enclave-AI",
+    description:
+      "Enclave-AI maps your AI systems against NIST AI RMF, the EU AI Act, and state laws like Colorado SB-205 and New York's AI law, with policy evidence built in.",
+    url: "/enclave-ai",
+  },
 };
 
 export default function EnclaveAiPage() {

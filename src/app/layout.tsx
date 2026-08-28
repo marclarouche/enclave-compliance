@@ -12,12 +12,17 @@ const sourceSerif = Source_Serif_4({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://enclavecompliance.com"),
   title: {
     template: "%s — Enclave Compliance",
     default: "Enclave Compliance",
   },
   description:
     "Enclave is a compliance toolset built for teams who need to prove control implementation, not just claim it.",
+  openGraph: {
+    siteName: "Enclave Compliance",
+    type: "website",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

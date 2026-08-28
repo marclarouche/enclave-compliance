@@ -3,7 +3,15 @@ import type { Metadata } from "next";
 import EmailCapture from "@/components/EmailCapture";
 
 export const metadata: Metadata = {
-  title: "Enclave Compliance",
+  title: { absolute: "Enclave Compliance" },
+  description:
+    "Enclave is a compliance toolset built for teams who need to prove control implementation, not just claim it. Three desktop products, one lifecycle: assess the gap, build the documentation, prove the controls.",
+  openGraph: {
+    title: "Enclave Compliance",
+    description:
+      "Enclave is a compliance toolset built for teams who need to prove control implementation, not just claim it.",
+    url: "/",
+  },
 };
 
 export default function HomePage() {

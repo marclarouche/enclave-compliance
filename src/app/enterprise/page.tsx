@@ -3,6 +3,14 @@ import EmailCapture from "@/components/EmailCapture";
 
 export const metadata: Metadata = {
   title: "Enclave-Enterprise",
+  description:
+    "The enterprise application is a multi-user system hosted on Red Hat dual servers, with a container option for those who wish to host in house, and a SaaS option coming soon.",
+  openGraph: {
+    title: "Enclave-Enterprise",
+    description:
+      "The enterprise application is a multi-user system hosted on Red Hat dual servers, with a container option for those who wish to host in house, and a SaaS option coming soon.",
+    url: "/enterprise",
+  },
 };
 
 export default function EnterprisePage() {

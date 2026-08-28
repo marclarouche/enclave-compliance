@@ -2,6 +2,14 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Enclave-GAP",
+  description:
+    "Enclave-GAP audits your existing policies and procedures against the framework you're targeting and shows you exactly what's missing before an auditor does.",
+  openGraph: {
+    title: "Enclave-GAP",
+    description:
+      "Enclave-GAP audits your existing policies and procedures against the framework you're targeting and shows you exactly what's missing before an auditor does.",
+    url: "/enclave-gap",
+  },
 };
 
 export default function EnclaveGapPage() {

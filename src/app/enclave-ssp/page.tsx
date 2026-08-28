@@ -2,6 +2,12 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Enclave-SSP",
+  description: "Enclave-SSP writes and documents CMMC Level 2 System Security Plans for defense contractors.",
+  openGraph: {
+    title: "Enclave-SSP",
+    description: "Enclave-SSP writes and documents CMMC Level 2 System Security Plans for defense contractors.",
+    url: "/enclave-ssp",
+  },
 };
 
 export default function EnclaveSspPage() {

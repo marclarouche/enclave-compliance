@@ -42,13 +42,14 @@ The handoff spec ships zero images/logos by design. Decided to use the existing 
 
 - [x] **Phase 1 — Scaffold**: Next.js + TS project (`package.json`, `tsconfig.json`, `next.config.ts`, `eslint.config.mjs`), Broadsheet tokens + page-layout classes ported into `globals.css`, shared `Nav` (with mobile menu + active-route highlighting) and `Footer` components, hexagon logo component + favicon.
 - [x] **Phase 2 — Routes**: the 5 pages built to the handoff's exact copy/structure.
-- [ ] **Phase 3 — Email capture backend**: real server route once a notification address is provided; validation/pending/success/error states per the handoff's interaction spec.
-- [ ] **Phase 4 — Business-site plumbing** (not covered by the design handoff, still needed): Privacy Policy + Terms (required once collecting emails), `sitemap.xml`/`robots.txt`, per-page meta/OpenGraph tags, custom 404.
+- [x] **Phase 3 — Email capture backend**: `/api/contact` sends a real notification via the Resend REST API (plain `fetch`, no new dependency) when `RESEND_API_KEY` is set; falls back to a console log otherwise, so dev/build never breaks without it. Destination is `CONTACT_NOTIFICATION_EMAIL` (defaults to marc.larouche@gmail.com — change once real hosting/support email is configured). Sender defaults to Resend's shared sandbox address (`RESEND_FROM_EMAIL`) until enclavecompliance.com is verified as a Resend domain. All three vars documented in `.env.example`. Validation/pending/success/error states were already built in Phase 1/2's `EmailCapture.tsx` per the handoff spec — verified working end-to-end in the browser.
+- [x] **Phase 4 — Business-site plumbing** (not covered by the design handoff, still needed): `/privacy` and `/terms` pages added (placeholder-quality legal text — not attorney-reviewed, should be checked before the site collects real leads at scale); `sitemap.xml` and `robots.txt` via Next.js metadata routes; per-page `description` + `openGraph` added to all 5 routes (also fixed a pre-existing bug where the home page's title rendered as "Enclave Compliance — Enclave Compliance" due to the layout's title template); custom `/not-found` page; Footer now links to Privacy/Terms (not in the original handoff's 3-item footer spec, but needed once the site collects emails).
 - [ ] **Phase 5 — Asset production**: rasterize the hexagon SVG into actual favicon/icon files (currently only the SVG source exists).
 - [ ] **Phase 6 — Deploy**: same hosting pattern as enclave-ai.dev.
 
 ## Open items
 
 - `Enclave_Compliance_Suite_Blueprint.pdf` in the repo root has never been read (missing PDF-render dependency in the build environment) — if it has positioning/pricing content that should shape site copy, it hasn't been factored in yet.
-- Email notification destination address — needed before Phase 3.
 - Whether/when enclave-ai.dev goes publicly live — needed to flip the plain-text mention to a real link.
+- `RESEND_API_KEY` must be set on the deploy host before lead notifications actually send (Phase 3 falls back to a console log without it) — see `.env.example`.
+- Privacy Policy and Terms of Service text is a reasonable placeholder, not attorney-reviewed — worth a legal pass before the site is driving real signups at volume.
