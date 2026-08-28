@@ -1,0 +1,72 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Enclave-AI",
+};
+
+export default function EnclaveAiPage() {
+  return (
+    <div>
+      <section className="hero">
+        <span className="kicker kicker-accent">Desktop product · Prove the controls</span>
+        <h1 className="display">Enclave-AI</h1>
+        <p className="sub">
+          Enclave-AI maps your AI systems against NIST AI RMF, the EU AI Act, and state laws like Colorado SB-205
+          and New York&rsquo;s AI law, with policy evidence built in.
+        </p>
+        <div className="row">
+          <button type="button" className="btn btn-primary">
+            Talk to us
+          </button>
+        </div>
+      </section>
+
+      <section className="section">
+        <span className="kicker">Coverage</span>
+        <table className="ftable">
+          <thead>
+            <tr>
+              <th>Framework or law</th>
+              <th>Scope</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>NIST AI RMF</td>
+              <td>Federal AI risk guidance</td>
+            </tr>
+            <tr>
+              <td>EU AI Act</td>
+              <td>European Union</td>
+            </tr>
+            <tr>
+              <td>Colorado SB-205</td>
+              <td>State-level</td>
+            </tr>
+            <tr>
+              <td>New York AI law</td>
+              <td>State-level</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section className="section">
+        <span className="kicker">Updates and release information</span>
+        {/* Kept as plain text, not a hyperlink, until enclave-ai.dev is confirmed
+            publicly deployed — see SITE_PLAN.md. */}
+        <p className="body">Application updates and other information for Enclave-AI are hosted at enclave-ai.dev.</p>
+      </section>
+
+      <section className="section">
+        <span className="kicker">Deployment</span>
+        <ul className="list">
+          <li>Single-user desktop application.</li>
+          <li>Multi-user deployment available through Enclave-Enterprise.</li>
+          <li>Coded according to DISA STIGs.</li>
+          <li>Zero open findings in SAST and DAST security testing.</li>
+        </ul>
+      </section>
+    </div>
+  );
+}

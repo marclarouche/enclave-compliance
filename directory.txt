@@ -1,0 +1,21 @@
+resources/
+├── enclave-compliance/
+│   ├── icon-512x512.png
+│   ├── app-icon.ico        (Windows Executable)
+│   ├── app-icon.icns       (macOS App Bundle)
+│   └── logo-primary-2x.png (Full Logotype Header)
+├── enclave-ai/
+│   ├── icon-512x512.png
+│   ├── app-icon.ico
+│   ├── app-icon.icns
+│   └── logo-primary-2x.png
+├── enclave-gap/
+│   ├── icon-512x512.png
+│   ├── app-icon.ico
+│   ├── app-icon.icns
+│   └── logo-primary-2x.png
+└── enclave-ssp/
+    ├── icon-512x512.png
+    ├── app-icon.ico
+    ├── app-icon.icns
+    └── logo-primary-2x.png

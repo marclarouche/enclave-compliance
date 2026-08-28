@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/broadsheet-fd145519-0c9f-4b12-95db-8dc0af65236a/styles.css" />
+<script src="_ds/broadsheet-fd145519-0c9f-4b12-95db-8dc0af65236a/_ds_bundle.js"></script>
+<title>Enclave Compliance Suite</title>
+<style>
+deck-stage {
+  --type-display: 118px;
+  --type-title: 64px;
+  --type-subtitle: 40px;
+  --type-body: 34px;
+  --type-small: 29px;
+  --type-kicker: 24px;
+  --pad-x: 144px;
+  --page-foot-note: "Enclave Compliance Suite — August 2026";
+  --pad-top: 108px;
+  --pad-bottom: 108px;
+  --baseline: 54px;
+  --cap-anchor: 170.44px;
+}
+.slide {
+  display: flex; flex-direction: column;
+  background: var(--color-bg); color: var(--color-text);
+  font-family: var(--font-body);
+  text-wrap: pretty;
+  padding: var(--pad-top) var(--pad-x) var(--pad-bottom);
+  print-color-adjust: exact; -webkit-print-color-adjust: exact;
+}
+.slide-title {
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  font-size: var(--type-title); line-height: calc(1.5 * var(--baseline)); letter-spacing: -0.015em; margin: 0;
+  margin-left: -0.035em;
+  text-box: trim-both cap alphabetic;
+}
+.pin-bottom { position: absolute; left: var(--pad-x); right: var(--pad-x); bottom: var(--pad-bottom); }
+.meta { display: flex; align-items: baseline; gap: 18px; font-size: var(--type-kicker); color: color-mix(in srgb, var(--color-text) 55%, transparent); }
+.meta span { text-box: trim-both cap alphabetic; }
+deck-stage { counter-reset: page; }
+.slide { counter-increment: page; }
+.page-foot {
+  position: absolute; right: var(--pad-x); bottom: 38px;
+  font-size: var(--type-kicker); letter-spacing: 0.04em;
+  color: color-mix(in srgb, currentColor 65%, transparent);
+  text-box: trim-both cap alphabetic;
+}
+.page-foot::before { content: counter(page) " · "; font-feature-settings: "tnum" 1; }
+.page-foot::after { content: var(--page-foot-note); }
+
+/* — cover / close — */
+.cover { justify-content: flex-start; padding-top: var(--cap-anchor); }
+.cover .rise { display: flex; flex-direction: column; gap: 42px; }
+.display {
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  font-size: var(--type-display); line-height: calc(2.2 * var(--baseline)); letter-spacing: -0.02em; margin: 0;
+  margin-left: -0.035em;
+  text-box: trim-both cap alphabetic;
+}
+.cover-sub { font-size: var(--type-subtitle); line-height: var(--baseline); max-width: 40ch; margin: 0; }
+
+/* — contents — */
+.toc { display: flex; flex-direction: column; max-width: 1100px; font-size: var(--type-subtitle); }
+.toc-row { display: flex; align-items: baseline; gap: 54px; }
+.toc-row > span { text-box: trim-both cap alphabetic; }
+.toc-row + .toc-row { margin-top: calc(2 * var(--baseline) - 1cap); }
+.toc-num { font-size: var(--type-kicker); color: var(--color-accent); }
+
+/* — divider — */
+.divider { justify-content: flex-start; padding-top: calc(4 * var(--baseline)); }
+.divider .rise { display: flex; flex-direction: column; align-items: flex-start; }
+.divider .slide-title { margin-top: -1cap; }
+.press-field { position: absolute; top: 0; right: 0; bottom: 0; width: 560px; overflow: hidden; pointer-events: none;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 62%);
+  mask-image: linear-gradient(to right, transparent, #000 62%); }
+.press-field i { position: absolute; inset: -120%; mix-blend-mode: multiply;
+  background-image: radial-gradient(circle, var(--pf-ink) 0 1.4px, transparent 1.7px);
+  background-size: 10px 10px; }
+.press-field .pf-y { --pf-ink: var(--color-process-yellow); transform: rotate(0.001deg) translate(-3px, 4px); }
+.press-field .pf-c { --pf-ink: var(--color-accent); transform: rotate(15deg) translate(2px, -1px); }
+.press-field .pf-m { --pf-ink: var(--color-accent-2); transform: rotate(75deg) translate(4px, 3px); }
+.ghost-num {
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  font-size: 340px; letter-spacing: -0.02em;
+  text-box: trim-both cap alphabetic;
+  margin: calc(10 * var(--baseline) - 1cap - 0.12em) -0.12em -0.12em calc(-0.033em - 0.12em);
+}
+
+/* — content — */
+.content { padding-top: calc(4 * var(--baseline)); }
+.content > .slide-title { margin-top: -1cap; }
+.content > .bullets { margin-top: calc(4 * var(--baseline) - 1cap); }
+.content > .table { margin-top: calc(3 * var(--baseline)); }
+.content > .cols { margin-top: calc(4 * var(--baseline) - 1cap); }
+.content > .stmt { margin-top: calc(4 * var(--baseline) - 1cap); }
+.kicker-line { font-size: var(--type-kicker); letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-accent-700); text-box: trim-both cap alphabetic; margin: 0 0 calc(1 * var(--baseline) - 1cap); }
+.bullets { display: flex; flex-direction: column; max-width: 1300px; margin: 0; padding: 0; list-style: none; font-size: var(--type-body); }
+.bullets li { line-height: var(--baseline); text-box: trim-both cap alphabetic; text-indent: -0.538em; }
+.bullets li::before { content: "• "; }
+.bullets li + li { margin-top: calc(2 * var(--baseline) - 1cap); }
+.stmt { font-size: var(--type-subtitle); line-height: calc(1.4 * var(--baseline)); max-width: 30ch; margin: 0; text-box: trim-both cap alphabetic; }
+.stmt-tag { display: inline-block; font-size: var(--type-kicker); letter-spacing: 0.06em; color: var(--color-accent-700); margin: calc(3 * var(--baseline) - 1cap) 0 0; text-box: trim-both cap alphabetic; }
+
+/* — columns — */
+.cols { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: calc(2 * var(--baseline)) 72px; }
+.cols h3 { font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: var(--type-body); margin: 0 0 calc(1 * var(--baseline) - 1cap); text-box: trim-both cap alphabetic; }
+.cols .col-num { display: block; font-size: var(--type-kicker); color: var(--color-accent); margin: 0 0 calc(1 * var(--baseline) - 1cap); text-box: trim-both cap alphabetic; }
+.cols p { font-size: var(--type-small); line-height: var(--baseline); margin: 0; text-align: justify; hyphens: auto; hyphenate-limit-chars: 6 3 3; text-box: trim-both cap alphabetic; }
+.cols-intro { font-size: var(--type-body); line-height: calc(1.4 * var(--baseline)); max-width: 1300px; margin: 0 0 calc(3 * var(--baseline) - 1cap); text-box: trim-both cap alphabetic; }
+
+/* — table — */
+.slide .table { max-width: 1700px; font-size: 31px; }
+.slide .table th, .slide .table td { text-box: trim-both cap alphabetic; padding: calc(var(--baseline) - 0.5cap - 0.5px) 28px calc(var(--baseline) - 0.5cap - 0.5px); }
+.slide .table th { font-size: var(--type-kicker); }
+.slide .table tbody tr:hover { background: none; }
+.slide .table th:first-child, .slide .table td:first-child { padding-left: 0; }
+.slide .table th:last-child, .slide .table td:last-child { padding-right: 0; }
+
+@media (prefers-reduced-motion: no-preference) {
+  [data-deck-active] .rise { animation: rise 0.45s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+  @keyframes rise { from { opacity: 0; transform: translateY(14px); } }
+}
+</style>
+</helmet>
+<x-import component-from-global-scope="deck-stage" from="./deck-stage.js" width="1920" height="1080" hint-size="100%,100%">
+
+  <section class="slide cover" data-label="Cover" data-speaker-notes="Enclave is a compliance toolset built for teams who need to prove control implementation, not just claim it.">
+    <div class="rise">
+      <h1 class="display">Enclave Compliance Suite</h1>
+      <p class="cover-sub">Enclave is a compliance toolset built for teams who need to prove control implementation, not just claim it.</p>
+    </div>
+    <div class="pin-bottom meta"><span>Enclave-GAP</span><span>·</span><span>Enclave-SSP</span><span>·</span><span>Enclave-AI</span></div>
+  </section>
+
+  <section class="slide content" data-label="Contents" data-speaker-notes="Overview of the five sections: the lifecycle, then each of the three products, then the roadmap.">
+    <h2 class="slide-title">Contents</h2>
+    <div class="toc rise">
+      <div class="toc-row"><span class="toc-num">01</span><span>The lifecycle</span></div>
+      <div class="toc-row"><span class="toc-num">02</span><span>Enclave-GAP</span></div>
+      <div class="toc-row"><span class="toc-num">03</span><span>Enclave-SSP</span></div>
+      <div class="toc-row"><span class="toc-num">04</span><span>Enclave-AI</span></div>
+      <div class="toc-row"><span class="toc-num">05</span><span>Roadmap</span></div>
+    </div>
+    <div class="page-foot" aria-hidden="true"></div>
+  </section>
+
+  <section class="slide divider" data-label="Divider — The lifecycle" data-speaker-notes="Each tool stands alone. Together, they cover the full compliance lifecycle: assess the gap, build the documentation, prove the controls.">
+    <div class="press-field" aria-hidden="true"><i class="pf-y"></i><i class="pf-c"></i><i class="pf-m"></i></div>
+    <div class="rise">
+      <h2 class="slide-title">The lifecycle</h2>
+      <div class="ghost-num">01</div>
+    </div>
+  </section>
+
+  <section class="slide content" data-label="Assess, build, prove" data-speaker-notes="Each tool stands alone. Together, they cover the full compliance lifecycle: assess the gap, build the documentation, prove the controls.">
+    <h2 class="slide-title">Assess. Build. Prove.</h2>
+    <p class="cols-intro rise">Each tool stands alone. Together, they cover the full compliance lifecycle: assess the gap, build the documentation, prove the controls.</p>
+    <div class="cols rise">
+      <div>
+        <span class="col-num">Assess — Enclave-GAP</span>
+        <h3>What's missing, before an audit finds it</h3>
+        <p>Audits existing policies and procedures against the framework you're targeting.</p>
+      </div>
+      <div>
+        <span class="col-num">Build — Enclave-SSP</span>
+        <h3>The documentation, written</h3>
+        <p>Writes and documents CMMC Level 2 System Security Plans for defense contractors.</p>
+      </div>
+      <div>
+        <span class="col-num">Prove — Enclave-AI</span>
+        <h3>Control evidence, mapped</h3>
+        <p>Maps AI systems against the frameworks and laws that govern them, with policy evidence built in.</p>
+      </div>
+    </div>
+    <div class="page-foot" aria-hidden="true"></div>
+  </section>
+
+  <section class="slide content" data-label="Enclave-GAP" data-speaker-notes="Enclave-GAP audits your existing policies and procedures against the framework you're targeting and shows you exactly what's missing before an auditor does.">
+    <h2 class="slide-title">Enclave-GAP</h2>
+    <p class="kicker-line rise">Assess the gap</p>
+    <p class="stmt rise">Audits your existing policies and procedures against the framework you're targeting and shows you exactly what's missing before an auditor does.</p>
+    <div class="page-foot" aria-hidden="true"></div>
+  </section>
+
+  <section class="slide content" data-label="Enclave-SSP" data-speaker-notes="Enclave-SSP writes and documents CMMC Level 2 System Security Plans for defense contractors.">
+    <h2 class="slide-title">Enclave-SSP</h2>
+    <p class="kicker-line rise">Build the documentation</p>
+    <p class="stmt rise">Writes and documents CMMC Level 2 System Security Plans for defense contractors.</p>
+    <div class="page-foot" aria-hidden="true"></div>
+  </section>
+
+  <section class="slide content" data-label="Enclave-AI" data-speaker-notes="Enclave-AI maps your AI systems against NIST AI RMF, the EU AI Act, and state laws like Colorado SB-205 and New York's AI law, with policy evidence built in.">
+    <h2 class="slide-title">Enclave-AI</h2>
+    <p class="kicker-line rise">Prove the controls</p>
+    <p class="stmt rise">Maps your AI systems against NIST AI RMF, the EU AI Act, and state laws like Colorado SB-205 and New York's AI law, with policy evidence built in.</p>
+    <div class="page-foot" aria-hidden="true"></div>
+  </section>
+
+  <section class="slide content" data-label="Frameworks covered" data-speaker-notes="A summary of which product covers which framework or regulation.">
+    <h2 class="slide-title">Frameworks and regulations covered</h2>
+    <table class="table rise">
+      <thead>
+        <tr><th>Framework</th><th>Scope</th><th>Covered by</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>CMMC Level 2</td><td>Defense contractors</td><td>Enclave-SSP</td></tr>
+        <tr><td>NIST AI RMF</td><td>Federal AI risk guidance</td><td>Enclave-AI</td></tr>
+        <tr><td>EU AI Act</td><td>European Union</td><td>Enclave-AI</td></tr>
+        <tr><td>State AI laws — Colorado SB-205, New York</td><td>State-level</td><td>Enclave-AI</td></tr>
+        <tr><td>Any targeted framework</td><td>Your existing policies</td><td>Enclave-GAP</td></tr>
+      </tbody>
+    </table>
+    <div class="page-foot" aria-hidden="true"></div>
+  </section>
+
+  <section class="slide content" data-label="Roadmap" data-speaker-notes="Enclave-Enterprise is a multi-user server deployment under development. Will be deployed with RedHat architecture and handle concurrent users.">
+    <h2 class="slide-title">Roadmap</h2>
+    <p class="kicker-line rise">Enclave-Enterprise</p>
+    <p class="stmt rise" style="max-width: 34ch;">Enclave-Enterprise is a multi-user server deployment under development. Will be deployed with RedHat architecture and handle concurrent users.</p>
+    <div class="page-foot" aria-hidden="true"></div>
+  </section>
+
+  <section class="slide cover" data-label="Close" data-speaker-notes="Closing slide.">
+    <div class="rise">
+      <h2 class="display">Let's talk compliance.</h2>
+      <p class="cover-sub">Enclave-GAP, Enclave-SSP, and Enclave-AI — the full compliance lifecycle, one toolset.</p>
+    </div>
+    <div class="pin-bottom meta"><span>hello@enclavecompliance.com</span></div>
+  </section>
+
+</x-import>
+
+</x-dc>
+</body>
+</html>

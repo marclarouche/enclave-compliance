@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 80" width="100%" height="100%">
+  <!-- Optional Panel Background for Dark Mode Display -->
+  <rect width="500" height="80" rx="8" fill="#121824" />
+  
+  <!-- Hexagon Icon Mark -->
+  <g transform="translate(10, 10)">
+    <polygon points="30,2 56,17 56,47 30,62 4,47 4,17" fill="#38BDF8" />
+    <text x="30" y="42" font-family="system-ui, -apple-system, sans-serif" font-size="32" font-weight="bold" fill="#121824" text-anchor="middle">E</text>
+  </g>
+  
+  <!-- Text: nclave-Compliance (Shifted left to 70) -->
+  <text x="70" y="52" font-family="system-ui, -apple-system, sans-serif" font-size="34" font-weight="700" fill="#E2E8F0" letter-spacing="-0.5">nclave-Compliance</text>
+</svg>

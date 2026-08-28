@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/broadsheet-fd145519-0c9f-4b12-95db-8dc0af65236a/styles.css" />
+<script src="_ds/broadsheet-fd145519-0c9f-4b12-95db-8dc0af65236a/_ds_bundle.js"></script>
+<title>Enclave Compliance</title>
+<style>
+:root { --leading: 28px; --half: 14px; --edge: clamp(20px, 5vw, 72px); --measure: 58ch; }
+body { margin: 0; text-wrap: pretty; }
+a { color: var(--color-accent-700); }
+a:hover { color: var(--color-accent-900); }
+.wrap { max-width: 1200px; margin: 0 auto; padding: 0 var(--edge); }
+.nav { padding-inline: max(var(--edge), calc((100% - 1200px) / 2 + var(--edge))); }
+.nav-brand { cursor: pointer; }
+.navlink { background: none; border: 0; padding: 0; font: inherit; font-size: 15px; color: var(--color-accent-700); cursor: pointer; white-space: nowrap; }
+.navlink:hover { color: var(--color-accent-900); }
+.navlink[data-on="1"] { color: var(--color-text); }
+@media (max-width: 700px) { .navlink { display: none; } }
+.domain-rail { display: flex; align-items: baseline; gap: 14px; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 60%, transparent); padding-top: calc(1.5 * var(--leading)); }
+.kicker { display: block; font-size: 13px; line-height: var(--half); letter-spacing: 0.08em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 70%, transparent); margin: 0 0 calc(var(--leading) - var(--half)); }
+.kicker-accent { color: var(--color-accent-700); }
+.hero { padding: calc(2.5 * var(--leading)) 0 calc(3 * var(--leading)); }
+.display { font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: clamp(40px, 5.6vw, 72px); line-height: clamp(43px, 6.1vw, 78px); letter-spacing: -0.02em; margin: 0; margin-left: -0.035em; text-box: trim-both cap alphabetic; }
+.h2 { font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: clamp(28px, 3.2vw, 40px); line-height: calc(1.5 * var(--leading)); letter-spacing: -0.015em; margin: 0; margin-left: -0.03em; text-box: trim-both cap alphabetic; }
+.sub { font-size: 18px; line-height: var(--leading); max-width: var(--measure); margin: calc(1.5 * var(--leading) - 1cap) 0 0; text-box: trim-both cap alphabetic; }
+.row { display: flex; gap: var(--space-3); flex-wrap: wrap; margin-top: var(--leading); }
+.section { padding: calc(2.5 * var(--leading)) 0; }
+.lead { font-size: 20px; line-height: calc(1.5 * var(--leading)); max-width: 46ch; margin: 0 0 calc(1.5 * var(--leading)); text-box: trim-both cap alphabetic; }
+.body { font-size: 16px; line-height: var(--leading); max-width: 62ch; margin: calc(var(--leading) - 1cap) 0 0; color: color-mix(in srgb, var(--color-text) 78%, transparent); text-box: trim-both cap alphabetic; }
+.steps { display: flex; gap: calc(2 * var(--half)); flex-wrap: wrap; align-items: baseline; }
+.step { display: flex; align-items: baseline; gap: 10px; font-family: var(--font-heading); font-size: 22px; }
+.step-num { color: var(--color-accent-700); }
+.step-arrow { color: color-mix(in srgb, var(--color-text) 45%, transparent); }
+.cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: calc(1.5 * var(--leading)) clamp(28px, 4vw, 64px); margin-top: calc(var(--leading) - var(--half)); }
+.cols-2 { grid-template-columns: repeat(2, 1fr); }
+.col-tag { display: block; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-accent-700); margin: 0 0 var(--half); }
+.col h3 { font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 26px; line-height: var(--leading); letter-spacing: -0.01em; margin: 0; text-box: trim-both cap alphabetic; }
+.col p { font-size: 16px; line-height: var(--leading); margin: calc(var(--leading) - 1cap) 0 0; color: color-mix(in srgb, var(--color-text) 78%, transparent); text-align: justify; hyphens: auto; hyphenate-limit-chars: 6 3 3; text-box: trim-both cap alphabetic; }
+.col .navlink { margin-top: var(--half); }
+@media (max-width: 900px) { .cols, .cols-2 { grid-template-columns: 1fr; } }
+.ftable { width: 100%; border-collapse: collapse; margin-top: calc(var(--leading) - var(--half)); font-size: 16px; }
+.ftable th, .ftable td { text-align: left; padding: var(--half) 20px var(--half) 0; border-bottom: 1px solid var(--color-divider); }
+.ftable th { font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 65%, transparent); font-weight: var(--font-heading-weight); }
+.ftable td:first-child { font-family: var(--font-heading); }
+.list { margin: calc(var(--leading) - 1cap) 0 0; padding: 0; list-style: none; max-width: 62ch; font-size: 16px; }
+.list li { line-height: var(--leading); text-indent: -0.6em; padding-left: 0.6em; color: color-mix(in srgb, var(--color-text) 82%, transparent); }
+.list li::before { content: "— "; color: var(--color-accent-700); }
+.list li + li { margin-top: var(--half); }
+.tag-pill { display: inline-block; font-size: 13px; letter-spacing: 0.04em; padding: 4px 12px; border-radius: var(--radius-md); background: var(--color-accent-100); color: var(--color-accent-900); }
+.pill-row { display: flex; gap: var(--space-2); flex-wrap: wrap; margin-top: var(--leading); }
+.signup { display: flex; gap: var(--space-3); align-items: stretch; max-width: 460px; margin-top: var(--leading); }
+.signup .input { flex: 1; }
+.signup .input, .signup .btn { min-height: 36px; }
+footer { padding: calc(2 * var(--leading)) 0; font-size: 13px; line-height: var(--leading); color: color-mix(in srgb, var(--color-text) 70%, transparent); display: flex; flex-wrap: wrap; gap: 8px 24px; }
+@media (max-width: 720px) { .signup { flex-direction: column; } }
+</style>
+</helmet>
+<nav class="nav">
+  <span class="nav-brand" onClick="{{ goHome }}">enclavecompliance.com</span>
+  <button type="button" class="navlink" data-on="{{ onSSP }}" onClick="{{ goSSP }}">Enclave-SSP</button>
+  <button type="button" class="navlink" data-on="{{ onAI }}" onClick="{{ goAI }}">Enclave-AI</button>
+  <button type="button" class="navlink" data-on="{{ onGAP }}" onClick="{{ goGAP }}">Enclave-GAP</button>
+  <button type="button" class="navlink" data-on="{{ onEnt }}" onClick="{{ goEnt }}">Enterprise</button>
+  <button type="button" class="btn btn-primary">Talk to us</button>
+</nav>
+<div class="wrap">
+
+  <sc-if value="{{ onHome }}" hint-placeholder-val="{{ true }}">
+    <div>
+      <div class="domain-rail"><span>Enclave Compliance</span><span>·</span><span>Desktop products</span><span>·</span><span>Enterprise deployment</span></div>
+      <section class="hero">
+        <h1 class="display">Prove control implementation. Not just claim it.</h1>
+        <p class="sub">Enclave is a compliance toolset built for teams who need to prove control implementation, not just claim it. Three desktop products, one lifecycle: assess the gap, build the documentation, prove the controls.</p>
+        <div class="row">
+          <button type="button" class="btn btn-primary">Talk to us</button>
+          <button type="button" class="btn btn-ghost" onClick="{{ goEnt }}">Enterprise deployment</button>
+        </div>
+      </section>
+
+      <section class="section">
+        <p class="lead">Each tool stands alone. Together, they cover the full compliance lifecycle.</p>
+        <div class="steps">
+          <span class="step"><span class="step-num">01</span> Assess the gap</span>
+          <span class="step-arrow">→</span>
+          <span class="step"><span class="step-num">02</span> Build the documentation</span>
+          <span class="step-arrow">→</span>
+          <span class="step"><span class="step-num">03</span> Prove the controls</span>
+        </div>
+      </section>
+
+      <section class="section">
+        <span class="kicker">The desktop products</span>
+        <div class="cols">
+          <div class="col">
+            <span class="col-tag">Assess — Enclave-GAP</span>
+            <h3>Enclave-GAP</h3>
+            <p>Audits your existing policies and procedures against the framework you're targeting and shows you exactly what's missing before an auditor does.</p>
+            <button type="button" class="navlink" onClick="{{ goGAP }}">Read more →</button>
+          </div>
+          <div class="col">
+            <span class="col-tag">Build — Enclave-SSP</span>
+            <h3>Enclave-SSP</h3>
+            <p>Writes and documents CMMC Level 2 System Security Plans for defense contractors.</p>
+            <button type="button" class="navlink" onClick="{{ goSSP }}">Read more →</button>
+          </div>
+          <div class="col">
+            <span class="col-tag">Prove — Enclave-AI</span>
+            <h3>Enclave-AI</h3>
+            <p>Maps your AI systems against NIST AI RMF, the EU AI Act, and state laws like Colorado SB-205 and New York's AI law, with policy evidence built in.</p>
+            <button type="button" class="navlink" onClick="{{ goAI }}">Read more →</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <span class="kicker">Frameworks and regulations covered</span>
+        <table class="ftable">
+          <thead>
+            <tr><th>Framework</th><th>Scope</th><th>Covered by</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>CMMC Level 2</td><td>Defense contractors</td><td>Enclave-SSP</td></tr>
+            <tr><td>NIST AI RMF</td><td>Federal AI risk guidance</td><td>Enclave-AI</td></tr>
+            <tr><td>EU AI Act</td><td>European Union</td><td>Enclave-AI</td></tr>
+            <tr><td>State AI laws — Colorado SB-205, New York</td><td>State-level</td><td>Enclave-AI</td></tr>
+            <tr><td>Any targeted framework</td><td>Your existing policies</td><td>Enclave-GAP</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section">
+        <span class="kicker kicker-accent">Built to DISA STIGs</span>
+        <h2 class="h2">All software and systems are coded according to DISA STIGs.</h2>
+      </section>
+
+      <section class="section">
+        <span class="kicker">Enterprise</span>
+        <h2 class="h2">Enclave-Enterprise</h2>
+        <p class="body">A multi-user system hosted on Red Hat dual servers, with a container option for those who wish to host in house. A SaaS option is coming soon.</p>
+        <div class="pill-row">
+          <span class="tag-pill">Red Hat dual servers</span>
+          <span class="tag-pill">Container — host in house</span>
+          <span class="tag-pill">SaaS coming soon</span>
+        </div>
+        <div class="row"><button type="button" class="btn btn-ghost" onClick="{{ goEnt }}">Enterprise details →</button></div>
+      </section>
+
+      <section class="section">
+        <h2 class="h2">Let's talk compliance.</h2>
+        <p class="sub">Enclave-GAP, Enclave-SSP, and Enclave-AI — the full compliance lifecycle, one toolset.</p>
+        <div class="signup">
+          <input class="input" type="email" placeholder="you@company.com" aria-label="Work email" />
+          <button type="button" class="btn btn-primary">Talk to us</button>
+        </div>
+      </section>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ onSSP }}" hint-placeholder-val="{{ false }}">
+    <div>
+      <section class="hero">
+        <span class="kicker kicker-accent">Desktop product · Build the documentation</span>
+        <h1 class="display">Enclave-SSP</h1>
+        <p class="sub">Enclave-SSP writes and documents CMMC Level 2 System Security Plans for defense contractors.</p>
+        <div class="row"><button type="button" class="btn btn-primary">Talk to us</button></div>
+      </section>
+      <section class="section">
+        <span class="kicker">Where it sits in the lifecycle</span>
+        <p class="body">Step two of three. Enclave-GAP finds what's missing; Enclave-SSP writes the System Security Plan that documents it.</p>
+      </section>
+      <section class="section">
+        <span class="kicker">Coverage</span>
+        <table class="ftable">
+          <thead><tr><th>Framework</th><th>Scope</th></tr></thead>
+          <tbody><tr><td>CMMC Level 2</td><td>Defense contractors</td></tr></tbody>
+        </table>
+      </section>
+      <section class="section">
+        <span class="kicker">Deployment</span>
+        <ul class="list">
+          <li>Single-user desktop application.</li>
+          <li>Multi-user deployment available through Enclave-Enterprise.</li>
+          <li>Coded according to DISA STIGs.</li>
+        </ul>
+      </section>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ onAI }}" hint-placeholder-val="{{ false }}">
+    <div>
+      <section class="hero">
+        <span class="kicker kicker-accent">Desktop product · Prove the controls</span>
+        <h1 class="display">Enclave-AI</h1>
+        <p class="sub">Enclave-AI maps your AI systems against NIST AI RMF, the EU AI Act, and state laws like Colorado SB-205 and New York's AI law, with policy evidence built in.</p>
+        <div class="row"><button type="button" class="btn btn-primary">Talk to us</button></div>
+      </section>
+      <section class="section">
+        <span class="kicker">Coverage</span>
+        <table class="ftable">
+          <thead><tr><th>Framework or law</th><th>Scope</th></tr></thead>
+          <tbody>
+            <tr><td>NIST AI RMF</td><td>Federal AI risk guidance</td></tr>
+            <tr><td>EU AI Act</td><td>European Union</td></tr>
+            <tr><td>Colorado SB-205</td><td>State-level</td></tr>
+            <tr><td>New York AI law</td><td>State-level</td></tr>
+          </tbody>
+        </table>
+      </section>
+      <section class="section">
+        <span class="kicker">Updates and release information</span>
+        <p class="body">Application updates and other information for Enclave-AI are hosted at enclave-ai.dev.</p>
+      </section>
+      <section class="section">
+        <span class="kicker">Deployment</span>
+        <ul class="list">
+          <li>Single-user desktop application.</li>
+          <li>Multi-user deployment available through Enclave-Enterprise.</li>
+          <li>Coded according to DISA STIGs.</li>
+        </ul>
+      </section>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ onGAP }}" hint-placeholder-val="{{ false }}">
+    <div>
+      <section class="hero">
+        <span class="kicker kicker-accent">Desktop product · Assess the gap</span>
+        <h1 class="display">Enclave-GAP</h1>
+        <p class="sub">Enclave-GAP audits your existing policies and procedures against the framework you're targeting and shows you exactly what's missing before an auditor does.</p>
+        <div class="row"><button type="button" class="btn btn-primary">Talk to us</button></div>
+      </section>
+      <section class="section">
+        <span class="kicker">Where it sits in the lifecycle</span>
+        <p class="body">Step one of three. Run it before you write documentation, and again before an assessment.</p>
+      </section>
+      <section class="section">
+        <span class="kicker">Coverage</span>
+        <table class="ftable">
+          <thead><tr><th>Input</th><th>Compared against</th></tr></thead>
+          <tbody><tr><td>Your existing policies and procedures</td><td>The framework you're targeting</td></tr></tbody>
+        </table>
+      </section>
+      <section class="section">
+        <span class="kicker">Deployment</span>
+        <ul class="list">
+          <li>Single-user desktop application.</li>
+          <li>Multi-user deployment available through Enclave-Enterprise.</li>
+          <li>Coded according to DISA STIGs.</li>
+        </ul>
+      </section>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ onEnt }}" hint-placeholder-val="{{ false }}">
+    <div>
+      <section class="hero">
+        <span class="kicker kicker-accent">Enterprise</span>
+        <h1 class="display">Enclave-Enterprise</h1>
+        <p class="sub">The enterprise application is a multi-user system hosted on Red Hat dual servers, with a container option for those who wish to host in house, and a SaaS option coming soon.</p>
+        <div class="row"><button type="button" class="btn btn-primary">Talk to us</button></div>
+      </section>
+      <section class="section">
+        <span class="kicker">Deployment options</span>
+        <div class="cols">
+          <div class="col">
+            <span class="col-tag">Available</span>
+            <h3>Red Hat dual servers</h3>
+            <p>A multi-user system hosted on Red Hat dual servers.</p>
+          </div>
+          <div class="col">
+            <span class="col-tag">Available</span>
+            <h3>Container</h3>
+            <p>A container option for those who wish to host in house.</p>
+          </div>
+          <div class="col">
+            <span class="col-tag">Coming soon</span>
+            <h3>SaaS</h3>
+            <p>A hosted SaaS option is coming soon.</p>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <span class="kicker kicker-accent">Security posture</span>
+        <h2 class="h2">All software and systems are coded according to DISA STIGs.</h2>
+      </section>
+      <section class="section">
+        <h2 class="h2">Talk to us about deployment.</h2>
+        <div class="signup">
+          <input class="input" type="email" placeholder="you@company.com" aria-label="Work email" />
+          <button type="button" class="btn btn-primary">Talk to us</button>
+        </div>
+      </section>
+    </div>
+  </sc-if>
+
+  <footer>
+    <span>enclavecompliance.com</span>
+    <span>Enclave-AI updates: enclave-ai.dev</span>
+    <span>Coded according to DISA STIGs.</span>
+  </footer>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { page: "home" };
+  go(page) { this.setState({ page }); if (typeof window !== "undefined") window.scrollTo(0, 0); }
+  renderVals() {
+    const p = this.state.page;
+    return {
+      onHome: p === "home", onSSP: p === "ssp", onAI: p === "ai", onGAP: p === "gap", onEnt: p === "ent",
+      goHome: () => this.go("home"),
+      goSSP: () => this.go("ssp"),
+      goAI: () => this.go("ai"),
+      goGAP: () => this.go("gap"),
+      goEnt: () => this.go("ent"),
+    };
+  }
+}
+</script>
+</body>
+</html>

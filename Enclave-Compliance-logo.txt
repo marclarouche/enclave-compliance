@@ -1,0 +1,32 @@
+Here is a full breakdown of the final asset structure to implement across your web platform and desktop application builds.
+
+Asset Implementation Matrix
+
+Primary Web Header (enclave-compliance-primary.svg):
+
+Layout: [E] Hexagon Icon + nclave-Compliance text.
+
+Color: Teal (#006680) mark with dark slate (#1A1A1A) text on a transparent/white background.
+
+Dark Mode Title Bar (enclave-compliance-dark.svg):
+
+Layout: [E] Hexagon Icon + nclave-Compliance text.
+
+Color: Electric sky teal (#38BDF8) mark with soft off-white (#E2E8F0) text on dark charcoal/obsidian panels (#121824).
+
+Desktop Dock & Favicon (enclave-compliance-icon.svg):
+
+Layout: Standalone solid teal hexagon with the centered serif E.
+
+Scaling: PNG exports at 512×512 px and 1024×1024 px for .ico and .icns packaging.
+
+Production Note for Code Integration
+
+When embedding the SVG directly into your React / Next.js header components, wrap the icon in a flex container with items-center to guarantee pixel-perfect alignment across different render engines:
+
+JavaScript
+<div className="flex items-center gap-2">
+  <svg className="h-10 w-auto" viewBox="0 0 540 80">
+    {/* Integrated SVG Paths */}
+  </svg>
+</div>
