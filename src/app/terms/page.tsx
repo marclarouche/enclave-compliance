@@ -58,8 +58,8 @@ export default function TermsPage() {
       <section className="section">
         <h2>Third-party links</h2>
         <p className="body">
-          This site references enclave-ai.dev, a companion domain for Enclave-AI application updates. We are not
-          responsible for the content or availability of third-party sites linked from here.
+          This site may reference companion domains, such as enclave-ai.dev. We are not responsible for the
+          content or availability of third-party sites linked from here.
         </p>
       </section>
 

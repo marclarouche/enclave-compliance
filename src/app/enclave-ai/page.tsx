@@ -60,10 +60,12 @@ export default function EnclaveAiPage() {
       </section>
 
       <section className="section">
-        <span className="kicker">Updates and release information</span>
-        {/* Kept as plain text, not a hyperlink, until enclave-ai.dev is confirmed
-            publicly deployed — see SITE_PLAN.md. */}
-        <p className="body">Application updates and other information for Enclave-AI are hosted at enclave-ai.dev.</p>
+        <span className="kicker">Release policy</span>
+        <p className="body">
+          Enclave-AI ships as a versioned installer, not a self-updating application. New releases are downloaded
+          and installed directly — the app makes no background update checks and has no network update-channel
+          by design, so it never phones home.
+        </p>
       </section>
 
       <section className="section">
