@@ -3,11 +3,11 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Enclave-AI",
   description:
-    "Enclave-AI maps your AI systems against NIST AI RMF, the EU AI Act, and state laws like Colorado SB-205 and New York's AI law, with policy evidence built in.",
+    "Enclave-AI maps your AI systems against NIST AI RMF, the EU AI Act, ISO/IEC 42001, GDPR, and state and local laws like Colorado SB-205 and NYC Local Law 144, with policy evidence built in.",
   openGraph: {
     title: "Enclave-AI",
     description:
-      "Enclave-AI maps your AI systems against NIST AI RMF, the EU AI Act, and state laws like Colorado SB-205 and New York's AI law, with policy evidence built in.",
+      "Enclave-AI maps your AI systems against NIST AI RMF, the EU AI Act, ISO/IEC 42001, GDPR, and state and local laws like Colorado SB-205 and NYC Local Law 144, with policy evidence built in.",
     url: "/enclave-ai",
   },
 };
@@ -19,8 +19,8 @@ export default function EnclaveAiPage() {
         <span className="kicker kicker-accent">Desktop product · Prove the controls</span>
         <h1 className="display">Enclave-AI</h1>
         <p className="sub">
-          Enclave-AI maps your AI systems against NIST AI RMF, the EU AI Act, and state laws like Colorado SB-205
-          and New York&rsquo;s AI law, with policy evidence built in.
+          Enclave-AI maps your AI systems against NIST AI RMF, the EU AI Act, ISO/IEC 42001, GDPR, and state and
+          local laws like Colorado SB-205 and NYC Local Law 144, with policy evidence built in.
         </p>
         <div className="row">
           <button type="button" className="btn btn-primary">
@@ -49,14 +49,30 @@ export default function EnclaveAiPage() {
             </tr>
             <tr>
               <td>Colorado SB-205</td>
-              <td>State-level</td>
+              <td>Consequential-decision AI systems</td>
             </tr>
             <tr>
-              <td>New York AI law</td>
-              <td>State-level</td>
+              <td>NYC Local Law 144 (AEDT)</td>
+              <td>Hiring/promotion tools in NYC</td>
+            </tr>
+            <tr>
+              <td>GDPR</td>
+              <td>EU jurisdiction, data protection &amp; privacy</td>
+            </tr>
+            <tr>
+              <td>ISO/IEC 42001</td>
+              <td>AI management system certification</td>
             </tr>
           </tbody>
         </table>
+      </section>
+
+      <section className="section">
+        <span className="kicker">Agentic AI governance</span>
+        <p className="body">
+          Beyond framework mapping, Enclave-AI also tracks Agentic AI / Zero Trust controls — non-human identity
+          governance for deployed AI agents, a distinct capability from the compliance frameworks above.
+        </p>
       </section>
 
       <section className="section">
