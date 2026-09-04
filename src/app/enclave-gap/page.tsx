@@ -16,21 +16,25 @@ export default function EnclaveGapPage() {
   return (
     <div>
       <section className="hero">
-        <span className="kicker kicker-accent">Desktop product · Assess the gap</span>
-        <h1 className="display">Enclave-GAP</h1>
-        <p className="sub">
-          Enclave-GAP audits your existing policies and procedures against the framework you&rsquo;re targeting and
-          shows you exactly what&rsquo;s missing before an auditor does.
-        </p>
-        <div className="row">
-          <button type="button" className="btn btn-primary">
-            Talk to us
-          </button>
+        <div className="hero-grid">
+          <div>
+            <span className="kicker kicker-accent">Desktop product · Assess the gap</span>
+            <h1 className="display">Enclave-GAP</h1>
+            <p className="sub">
+              Enclave-GAP audits your existing policies and procedures against the framework you&rsquo;re targeting
+              and shows you exactly what&rsquo;s missing before an auditor does.
+            </p>
+            <div className="row">
+              <button type="button" className="btn btn-primary">
+                Talk to us
+              </button>
+            </div>
+          </div>
+          <figure className="screenshot screenshot-hero">
+            <img src="/screenshots/enclave-gap-dashboard.png" alt="Enclave-GAP policy history view" />
+            <figcaption className="screenshot-caption">Enclave-GAP policy history view</figcaption>
+          </figure>
         </div>
-        <figure className="screenshot">
-          <img src="/screenshots/enclave-gap-dashboard.png" alt="Enclave-GAP policy history view" />
-          <figcaption className="screenshot-caption">Enclave-GAP policy history view</figcaption>
-        </figure>
       </section>
 
       <section className="section">

@@ -191,6 +191,13 @@ img { display: block; max-width: 100%; }
 }
 .kicker-accent { color: var(--color-accent-700); }
 .hero { padding: calc(2.5 * var(--leading)) 0 calc(3 * var(--leading)); }
+.hero-grid {
+  display: grid; grid-template-columns: 1.1fr 1fr;
+  gap: clamp(28px, 4vw, 64px); align-items: center;
+}
+@media (max-width: 900px) {
+  .hero-grid { grid-template-columns: 1fr; }
+}
 .display {
   font-family: var(--font-heading); font-weight: var(--font-heading-weight);
   font-size: clamp(40px, 5.6vw, 72px); line-height: clamp(43px, 6.1vw, 78px);
@@ -296,6 +303,11 @@ img { display: block; max-width: 100%; }
   overflow: hidden;
 }
 .screenshot img { width: 100%; }
+.screenshot-hero {
+  margin-top: 0;
+  aspect-ratio: 4 / 3;
+}
+.screenshot-hero img { width: 100%; height: 100%; object-fit: cover; object-position: top left; }
 .screenshot-caption {
   display: block; font-size: 13px; margin-top: var(--half);
   color: color-mix(in srgb, var(--color-text) 60%, transparent);

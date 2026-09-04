@@ -17,21 +17,25 @@ export default function EnterprisePage() {
   return (
     <div>
       <section className="hero">
-        <span className="kicker kicker-accent">Enterprise</span>
-        <h1 className="display">Enclave-Enterprise</h1>
-        <p className="sub">
-          The enterprise application is a multi-user system hosted on Red Hat dual servers, with a container option
-          for those who wish to host in house, and a SaaS option coming soon.
-        </p>
-        <div className="row">
-          <button type="button" className="btn btn-primary">
-            Talk to us
-          </button>
+        <div className="hero-grid">
+          <div>
+            <span className="kicker kicker-accent">Enterprise</span>
+            <h1 className="display">Enclave-Enterprise</h1>
+            <p className="sub">
+              The enterprise application is a multi-user system hosted on Red Hat dual servers, with a container
+              option for those who wish to host in house, and a SaaS option coming soon.
+            </p>
+            <div className="row">
+              <button type="button" className="btn btn-primary">
+                Talk to us
+              </button>
+            </div>
+          </div>
+          <figure className="screenshot screenshot-hero">
+            <img src="/screenshots/enterprise-dashboard.png" alt="Enclave-Enterprise console preview" />
+            <figcaption className="screenshot-caption">Illustrative preview — console UI in development</figcaption>
+          </figure>
         </div>
-        <figure className="screenshot">
-          <img src="/screenshots/enterprise-dashboard.png" alt="Enclave-Enterprise console preview" />
-          <figcaption className="screenshot-caption">Illustrative preview — console UI in development</figcaption>
-        </figure>
       </section>
 
       <section className="section">

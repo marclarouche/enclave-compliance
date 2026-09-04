@@ -14,18 +14,24 @@ export default function EnclaveSspPage() {
   return (
     <div>
       <section className="hero">
-        <span className="kicker kicker-accent">Desktop product · Build the documentation</span>
-        <h1 className="display">Enclave-SSP</h1>
-        <p className="sub">Enclave-SSP writes and documents CMMC Level 2 System Security Plans for defense contractors.</p>
-        <div className="row">
-          <button type="button" className="btn btn-primary">
-            Talk to us
-          </button>
+        <div className="hero-grid">
+          <div>
+            <span className="kicker kicker-accent">Desktop product · Build the documentation</span>
+            <h1 className="display">Enclave-SSP</h1>
+            <p className="sub">
+              Enclave-SSP writes and documents CMMC Level 2 System Security Plans for defense contractors.
+            </p>
+            <div className="row">
+              <button type="button" className="btn btn-primary">
+                Talk to us
+              </button>
+            </div>
+          </div>
+          <figure className="screenshot screenshot-hero">
+            <img src="/screenshots/enclave-ssp-dashboard.png" alt="Enclave-SSP control matrix view" />
+            <figcaption className="screenshot-caption">Enclave-SSP control matrix view</figcaption>
+          </figure>
         </div>
-        <figure className="screenshot">
-          <img src="/screenshots/enclave-ssp-dashboard.png" alt="Enclave-SSP control matrix view" />
-          <figcaption className="screenshot-caption">Enclave-SSP control matrix view</figcaption>
-        </figure>
       </section>
 
       <section className="section">

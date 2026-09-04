@@ -16,21 +16,25 @@ export default function EnclaveAiPage() {
   return (
     <div>
       <section className="hero">
-        <span className="kicker kicker-accent">Desktop product · Prove the controls</span>
-        <h1 className="display">Enclave-AI</h1>
-        <p className="sub">
-          Enclave-AI maps your AI systems against NIST AI RMF, the EU AI Act, ISO/IEC 42001, GDPR, and state and
-          local laws like Colorado SB-205 and NYC Local Law 144, with policy evidence built in.
-        </p>
-        <div className="row">
-          <button type="button" className="btn btn-primary">
-            Talk to us
-          </button>
+        <div className="hero-grid">
+          <div>
+            <span className="kicker kicker-accent">Desktop product · Prove the controls</span>
+            <h1 className="display">Enclave-AI</h1>
+            <p className="sub">
+              Enclave-AI maps your AI systems against NIST AI RMF, the EU AI Act, ISO/IEC 42001, GDPR, and state and
+              local laws like Colorado SB-205 and NYC Local Law 144, with policy evidence built in.
+            </p>
+            <div className="row">
+              <button type="button" className="btn btn-primary">
+                Talk to us
+              </button>
+            </div>
+          </div>
+          <figure className="screenshot screenshot-hero">
+            <img src="/screenshots/enclave-ai-dashboard.png" alt="Enclave-AI dashboard" />
+            <figcaption className="screenshot-caption">Enclave-AI dashboard</figcaption>
+          </figure>
         </div>
-        <figure className="screenshot">
-          <img src="/screenshots/enclave-ai-dashboard.png" alt="Enclave-AI dashboard" />
-          <figcaption className="screenshot-caption">Enclave-AI dashboard</figcaption>
-        </figure>
       </section>
 
       <section className="section">
