@@ -28,6 +28,10 @@ export default function EnterprisePage() {
             Talk to us
           </button>
         </div>
+        <figure className="screenshot">
+          <img src="/screenshots/enterprise-dashboard.png" alt="Enclave-Enterprise console preview" />
+          <figcaption className="screenshot-caption">Illustrative preview — console UI in development</figcaption>
+        </figure>
       </section>
 
       <section className="section">
