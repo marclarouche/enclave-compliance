@@ -27,6 +27,10 @@ export default function EnclaveAiPage() {
             Talk to us
           </button>
         </div>
+        <figure className="screenshot">
+          <img src="/screenshots/enclave-ai-dashboard.png" alt="Enclave-AI dashboard" />
+          <figcaption className="screenshot-caption">Enclave-AI dashboard</figcaption>
+        </figure>
       </section>
 
       <section className="section">

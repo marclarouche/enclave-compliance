@@ -22,6 +22,10 @@ export default function EnclaveSspPage() {
             Talk to us
           </button>
         </div>
+        <figure className="screenshot">
+          <img src="/screenshots/enclave-ssp-dashboard.png" alt="Enclave-SSP control matrix view" />
+          <figcaption className="screenshot-caption">Enclave-SSP control matrix view</figcaption>
+        </figure>
       </section>
 
       <section className="section">

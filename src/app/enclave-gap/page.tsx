@@ -27,6 +27,10 @@ export default function EnclaveGapPage() {
             Talk to us
           </button>
         </div>
+        <figure className="screenshot">
+          <img src="/screenshots/enclave-gap-dashboard.png" alt="Enclave-GAP policy history view" />
+          <figcaption className="screenshot-caption">Enclave-GAP policy history view</figcaption>
+        </figure>
       </section>
 
       <section className="section">
