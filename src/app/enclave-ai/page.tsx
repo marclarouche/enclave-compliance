@@ -3,11 +3,11 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Enclave-AI",
   description:
-    "Enclave-AI maps your AI systems against NIST AI RMF, the EU AI Act, ISO/IEC 42001, GDPR, and state and local laws like Colorado SB-205 and NYC Local Law 144, with policy evidence built in.",
+    "Enclave-AI maps your AI systems against NIST AI RMF, NIST CSF 2.0, the EU AI Act, ISO/IEC 42001, GDPR, and state and local laws like Colorado SB-205, Utah SB-149, and NYC Local Law 144 (AEDT), with policy evidence built in.",
   openGraph: {
     title: "Enclave-AI",
     description:
-      "Enclave-AI maps your AI systems against NIST AI RMF, the EU AI Act, ISO/IEC 42001, GDPR, and state and local laws like Colorado SB-205 and NYC Local Law 144, with policy evidence built in.",
+      "Enclave-AI maps your AI systems against NIST AI RMF, NIST CSF 2.0, the EU AI Act, ISO/IEC 42001, GDPR, and state and local laws like Colorado SB-205, Utah SB-149, and NYC Local Law 144 (AEDT), with policy evidence built in.",
     url: "/enclave-ai",
   },
 };
@@ -21,8 +21,9 @@ export default function EnclaveAiPage() {
             <span className="kicker kicker-accent">Desktop product · Prove the controls</span>
             <h1 className="display">Enclave-AI</h1>
             <p className="sub">
-              Enclave-AI maps your AI systems against NIST AI RMF, the EU AI Act, ISO/IEC 42001, GDPR, and state and
-              local laws like Colorado SB-205 and NYC Local Law 144, with policy evidence built in.
+              Enclave-AI maps your AI systems against NIST AI RMF, NIST CSF 2.0, the EU AI Act, ISO/IEC 42001, GDPR, and
+              state and local laws like Colorado SB-205, Utah SB-149, and NYC Local Law 144 (AEDT), with policy
+              evidence built in.
             </p>
             <div className="row">
               <button type="button" className="btn btn-primary">
@@ -64,12 +65,20 @@ export default function EnclaveAiPage() {
               <td>Hiring/promotion tools in NYC</td>
             </tr>
             <tr>
+              <td>Utah SB-149</td>
+              <td>Generative AI disclosure duties</td>
+            </tr>
+            <tr>
               <td>GDPR</td>
               <td>EU jurisdiction, data protection &amp; privacy</td>
             </tr>
             <tr>
               <td>ISO/IEC 42001</td>
               <td>AI management system certification</td>
+            </tr>
+            <tr>
+              <td>NIST CSF 2.0</td>
+              <td>General cybersecurity risk management</td>
             </tr>
           </tbody>
         </table>

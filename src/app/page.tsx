@@ -84,8 +84,8 @@ export default function HomePage() {
             <span className="col-tag">Prove — Enclave-AI</span>
             <h3>Enclave-AI</h3>
             <p>
-              Maps your AI systems against NIST AI RMF, the EU AI Act, and state laws like Colorado SB-205 and New
-              York&rsquo;s AI law, with policy evidence built in.
+              Maps your AI systems against NIST AI RMF, NIST CSF 2.0, the EU AI Act, ISO/IEC 42001, GDPR, and state
+              AI laws, with policy evidence built in.
             </p>
             <Link href="/enclave-ai" className="navlink">
               Read more →
@@ -121,7 +121,22 @@ export default function HomePage() {
               <td>Enclave-AI</td>
             </tr>
             <tr>
-              <td>State AI laws — Colorado SB-205, New York</td>
+              <td>ISO/IEC 42001</td>
+              <td>AI management system certification</td>
+              <td>Enclave-AI</td>
+            </tr>
+            <tr>
+              <td>GDPR</td>
+              <td>EU jurisdiction, data protection &amp; privacy</td>
+              <td>Enclave-AI</td>
+            </tr>
+            <tr>
+              <td>NIST CSF 2.0</td>
+              <td>General cybersecurity risk management</td>
+              <td>Enclave-AI</td>
+            </tr>
+            <tr>
+              <td>State AI laws — Colorado SB-205, Utah SB-149, NYC LL144 (AEDT)</td>
               <td>State-level</td>
               <td>Enclave-AI</td>
             </tr>
