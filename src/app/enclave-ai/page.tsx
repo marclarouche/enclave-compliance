@@ -108,6 +108,7 @@ export default function EnclaveAiPage() {
           <li>Multi-user deployment available through Enclave-Enterprise.</li>
           <li>Coded according to DISA STIGs.</li>
           <li>Zero open findings in SAST and DAST security testing.</li>
+          <li>Local data encrypted at rest with SQLCipher, using AES-256, a FIPS-approved algorithm.</li>
         </ul>
       </section>
     </div>
