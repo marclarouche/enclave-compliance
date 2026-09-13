@@ -7,17 +7,24 @@
 ### Session Log
 | Date | Start | End | Hours | Session Notes |
 |---|---|---|---|---|
-| 2026-09-09 | 14:14 | | | |
+| 2026-09-09 | 14:14 | 14:30 | 0.3 | End time estimated — only one commit (`ba3c117`) exists for this session and no end time was logged live; Marc, correct this if the real duration was longer. |
+| 2026-09-12 | 18:00 | | | |
 
-**Total Hours (Phase 1): 0.0**
+**Total Hours (Phase 1): 0.3**
 
 ### Key Activities
 - Added FIPS-cryptography verbiage (SQLCipher/AES-256, a FIPS-approved algorithm) to the Enclave-SSP, Enclave-AI, and Enclave-GAP product pages' Deployment sections, after verifying against NIST SP 800-171 control 3.13.11 and each app's own crypto implementation that "FIPS-validated" (vs. "FIPS-approved algorithm") would be an inaccurate claim. Excluded Enclave-Enterprise — it doesn't use SQLCipher (PostgreSQL-based server architecture) and isn't built yet.
 - Verified the change live in the browser preview (`npm run dev`) on both affected pages.
 - Started CPE tracking for this project (`PROJECT_CPE_LOG.md`).
+- Built a new `/security` "Application Security" page (added to main nav), aimed at agency-buyer security questionnaires. Content sourced by reading the real, current SAST/DAST reports and STIG status trackers across Enclave-AI/GAP/SSP (not from memory) — cargo audit/npm audit/Semgrep/clippy/machete/knip toolchain, the manual runtime-boundary-review rationale for why traditional DAST doesn't apply to offline Tauri desktop apps, current per-product STIG compliance numbers (0 open High findings across all three), and encryption/auth architecture. Deliberately scoped to AI/GAP/SSP only (Marc's decision) — Enclave-POL and Enclave-Enterprise are excluded as not yet mature enough to feature. CTA routes through the existing `EmailCapture`/`/api/contact` flow to request the full report set.
+- Flagged two real gaps for a later session (not built today): no public vulnerability-disclosure process/security.txt beyond a plain contact email, and no SBOM export despite already having full dependency-tree data from cargo audit/npm audit.
+- Same session, in direct response to Marc's follow-up: strengthened the vulnerability-reporting section with a safe-harbor/good-faith clause and a 2-business-day acknowledgment commitment; added an "Architecture & threat model" section to `/security` with a new hand-built `ArchitectureDiagram.tsx` (data-flow diagram: user → untrusted WebView → capability-scoped Rust core → SQLCipher database + OS key vault + platform authenticator, with an explicit "no listening ports / zero outbound calls" callout, verified against real `tauri.conf.json`/capability files rather than assumed) plus a written per-product explanation; wrote `ENCLAVE_COMPLIANCE_INCIDENT_RESPONSE_PLAN.md` (org-level plan mapped to NIST SP 800-53 Rev. 5 IR-1 through IR-8, honest about single-person-team limits, citing two real historical incidents) and a real `INCIDENT_LOG.md` to back it, both at the enclave-compliance repo root.
+- Discovered while writing the threat-model section that Enclave-GAP (unlike Enclave-AI/SSP) had no threat model document at all — dispatched a background agent to write `ENCLAVE_GAP_THREAT_MODEL.md` in the Enclave-GAP repo with the same rigor, grounded in GAP's real source, rather than let the new page's "per-product threat models" claim be false for one of the three products it covers.
+- Marc pasted an external Tauri/SQLCipher security-hardening checklist; verified every item against real source/CI config across Enclave-AI/GAP/SSP rather than taking it at face value — confirmed cargo-audit/npm-audit/capability-scoping/parameterized-queries/zeroize/Argon2 already solid, and surfaced real gaps never done anywhere in the suite: no cargo-deny, clippy not CI-enforced (manual only), no cargo-geiger baseline, zero ESLint setup in any of the three products, no secret-scanning (gitleaks/TruffleHog), and `PRAGMA cipher_memory_security`/inconsistent `foreign_keys` enforcement. Also correctly identified two items as deliberate-not-gaps (Tauri v2's capability system supersedes the v1-only "isolation pattern"; the by-design shared-workstation `ProgramData` permissions model would break if tightened to owner-only) and flagged Socket.dev/Snyk/CodeQL as needing Marc's own account/plan decision rather than just signing up. Marc approved cargo-deny, clippy-in-CI, cargo-geiger baseline, the PRAGMA additions, ESLint+security plugins, and gitleaks-in-CI; deferred SCA and CodeQL.
+- The GAP threat-model agent's report surfaced a real, currently-unfixed vulnerability: Enclave-GAP still has the cross-process keyfile race that caused Enclave-SSP's actual credential-loss incident (Enclave-AI already got a preemptive port of the fix; GAP never did). Dispatched three parallel background agents (one per product) to apply all six approved tooling items, plus — for GAP specifically — port Enclave-AI's proven, dependency-free (`std::fs::File::try_lock`) fix for the keyfile race, update `ENCLAVE_GAP_THREAT_MODEL.md` to stop describing it as an open risk once fixed, and close the matching STIG row if one exists.
 
 ### Skills and Tools Applied
-- cpe-tracker, cross-app source verification (SQLCipher usage in Enclave-AI/GAP/SSP/POL), Next.js dev server (`preview_start`/browser verification)
+- cpe-tracker, cross-app source verification (SAST/DAST reports, STIG status trackers, and security-scan skill methodology across Enclave-AI/GAP/SSP), Next.js dev server (`preview_start`/browser verification)
 
 ### Summary
 [written when phase closes]

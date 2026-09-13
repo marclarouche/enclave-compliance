@@ -10,6 +10,7 @@ const NAV_LINKS = [
   { href: "/enclave-ai", label: "Enclave-AI" },
   { href: "/enclave-gap", label: "Enclave-GAP" },
   { href: "/enterprise", label: "Enterprise" },
+  { href: "/security", label: "Security" },
 ];
 
 export default function Nav() {
