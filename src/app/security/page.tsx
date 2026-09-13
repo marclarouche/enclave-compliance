@@ -40,9 +40,9 @@ export default function SecurityPage() {
       <section className="section">
         <span className="kicker">Static analysis (SAST)</span>
         <p className="body">
-          A fixed toolchain runs across all three products&rsquo; Rust and TypeScript source. Dependency scans run on
-          every push and pull request in CI and block the build on any known vulnerability; the full sweep below runs
-          on every release and monthly.
+          A fixed toolchain runs across all three products&rsquo; Rust and TypeScript source. Dependency, lint,
+          license-policy, and secret scans all run on every push and pull request in CI and block the build on any
+          finding; the full Semgrep sweep below runs on every release and monthly.
         </p>
         <table className="ftable">
           <thead>
@@ -57,6 +57,10 @@ export default function SecurityPage() {
               <td>Rust dependency CVEs and advisories (RustSec)</td>
             </tr>
             <tr>
+              <td>cargo deny</td>
+              <td>Dependency advisories, license policy, and banned/duplicate crates</td>
+            </tr>
+            <tr>
               <td>npm audit</td>
               <td>JavaScript/TypeScript dependency vulnerabilities</td>
             </tr>
@@ -66,7 +70,19 @@ export default function SecurityPage() {
             </tr>
             <tr>
               <td>cargo clippy</td>
-              <td>Rust lint pass, run clean on every change</td>
+              <td>Rust lint pass — CI-blocking on every push, not just spot-checked</td>
+            </tr>
+            <tr>
+              <td>ESLint</td>
+              <td>TypeScript/React lint pass, with dedicated XSS/unsanitized-DOM security rules</td>
+            </tr>
+            <tr>
+              <td>cargo geiger</td>
+              <td>Quantifies <code>unsafe</code> Rust pulled in by the dependency tree</td>
+            </tr>
+            <tr>
+              <td>gitleaks</td>
+              <td>Scans every push, and the full commit history, for accidentally committed secrets</td>
             </tr>
             <tr>
               <td>cargo machete / knip</td>
@@ -76,7 +92,10 @@ export default function SecurityPage() {
         </table>
         <p className="body">
           Current result across Enclave-GAP, Enclave-SSP, and Enclave-AI: zero known dependency vulnerabilities,
-          zero Semgrep findings above informational severity, and a clean <code>cargo clippy</code> pass.
+          zero Semgrep findings above informational severity, and a clean <code>cargo clippy</code>, ESLint
+          security-rule, and <code>cargo deny</code> pass. A one-time full commit-history secret scan is complete
+          for Enclave-SSP and Enclave-AI (zero real secrets found); Enclave-GAP&rsquo;s history scan is queued —
+          the CI gate itself is already live on all three.
         </p>
       </section>
 
@@ -157,9 +176,9 @@ export default function SecurityPage() {
           <tbody>
             <tr>
               <td>Enclave-GAP</td>
-              <td>109</td>
+              <td>107</td>
               <td>106</td>
-              <td>0 High, 1 Medium</td>
+              <td>0 High, 2 Medium</td>
             </tr>
             <tr>
               <td>Enclave-SSP</td>
@@ -169,26 +188,38 @@ export default function SecurityPage() {
             </tr>
             <tr>
               <td>Enclave-AI</td>
-              <td>153</td>
+              <td>151</td>
               <td>148</td>
-              <td>0 High, 2 Medium</td>
+              <td>0 High, 0 Medium</td>
             </tr>
           </tbody>
         </table>
         <p className="body">
-          As of September 2026. Zero open High-severity findings across all three products. Remaining Medium items
-          and their remediation plans are documented in each product&rsquo;s STIG status tracker, included in the
-          full package on request.
+          As of September 13, 2026. Zero open High-severity findings across all three products. Remaining Medium
+          items and their remediation plans are documented in each product&rsquo;s STIG status tracker, included in
+          the full package on request.
         </p>
       </section>
 
       <section className="section">
         <span className="kicker">Encryption &amp; authentication</span>
         <ul className="list">
-          <li>Local data encrypted at rest with SQLCipher, using AES-256, a FIPS-approved algorithm.</li>
+          <li>
+            Local data encrypted at rest with SQLCipher, using AES-256, a FIPS-<em>approved</em> algorithm — with
+            SQLCipher&rsquo;s own memory-security pragma enabled, so decrypted buffers are zeroed by the database
+            engine itself, not just at the application layer.
+          </li>
           <li>Passwordless member authentication via WebAuthn, backed by the platform&rsquo;s own biometric hardware.</li>
           <li>Encryption keys sealed with the operating system&rsquo;s native key-protection API (Windows DPAPI, macOS Keychain) — never stored in plaintext.</li>
+          <li>Credential files are protected against concurrent-access corruption with a real OS-level file lock, not just in-process synchronization.</li>
         </ul>
+        <p className="body">
+          None of the three products holds a FIPS 140-2/140-3 CMVP-validated cryptographic module — that&rsquo;s a
+          deliberate product-line decision, not an oversight. All three are architecturally scoped to never store
+          CUI, the one condition that would require module validation regardless of deployment; the encryption
+          algorithms themselves are already FIPS-approved. Module-validated cryptography is reserved for
+          Enclave-Enterprise, the networked, multi-tenant product where that guarantee actually matters most.
+        </p>
       </section>
 
       <section className="section">

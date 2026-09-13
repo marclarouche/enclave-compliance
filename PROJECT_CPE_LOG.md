@@ -9,8 +9,9 @@
 |---|---|---|---|---|
 | 2026-09-09 | 14:14 | 14:30 | 0.3 | End time estimated — only one commit (`ba3c117`) exists for this session and no end time was logged live; Marc, correct this if the real duration was longer. |
 | 2026-09-12 | 18:00 | 19:21 | 1.4 | Application Security page + org-level IR plan/incident log, then a full cross-product SAST/DevSecOps hardening pass (cargo-deny, CI-enforced clippy, cargo-geiger, ESLint+security plugins, gitleaks, PRAGMA hardening) and a real vulnerability fix in Enclave-GAP, across Enclave-AI/GAP/SSP. |
+| 2026-09-13 | 13:00 | 13:20 | 0.3 | Committed/pushed the rest of the prior session's work (Enclave-AI's own security-tooling pass, plus a separate FIPS 140-2/140-3 permanent product-line closure across all four Enclave desktop trackers — reviewed diffs carefully rather than blind `git add -A`, since unrelated concurrent work was sitting in the same working trees). Then updated the `/security` page itself to reflect the new tooling (cargo-deny, cargo-geiger, ESLint, gitleaks), refreshed STIG numbers, and added the PRAGMA/keyfile-lock/FIPS-posture facts. |
 
-**Total Hours (Phase 1): 1.7**
+**Total Hours (Phase 1): 2.0**
 
 ### Key Activities
 - Added FIPS-cryptography verbiage (SQLCipher/AES-256, a FIPS-approved algorithm) to the Enclave-SSP, Enclave-AI, and Enclave-GAP product pages' Deployment sections, after verifying against NIST SP 800-171 control 3.13.11 and each app's own crypto implementation that "FIPS-validated" (vs. "FIPS-approved algorithm") would be an inaccurate claim. Excluded Enclave-Enterprise — it doesn't use SQLCipher (PostgreSQL-based server architecture) and isn't built yet.
