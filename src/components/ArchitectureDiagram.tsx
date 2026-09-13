@@ -39,7 +39,7 @@ export default function ArchitectureDiagram() {
         Rust core — trusted
       </text>
       <text x="450" y="263" textAnchor="middle" fontSize="11.5" fill="var(--color-text)">
-        Capability grant: core:default + opener:default + dialog:default only
+        Capability grant: core:default + dialog:default only
       </text>
       <text x="450" y="280" textAnchor="middle" fontSize="11.5" fill="var(--color-text)">
         no filesystem, shell-exec, or HTTP-client permission — verified, not assumed
