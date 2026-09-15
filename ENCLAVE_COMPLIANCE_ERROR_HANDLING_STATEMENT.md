@@ -34,15 +34,6 @@ If something the application needs for its own security stops working, it stops 
 
 All three products now show a plain, actionable message — "Enclave hit an unexpected error and can't continue safely, please restart the app" — if something genuinely unanticipated happens, instead of leaving you looking at a blank or frozen window with nothing to report. The real technical detail from that failure is still captured for a developer's own review; it's never shown to the person using the app at the time.
 
-## Where we're still hardening this
-
-We'd rather tell you what's not finished than imply parity that isn't there yet:
-
-- **Enclave-AI** captures a crash-diagnostic record even for an unexpected internal bug (not just an anticipated failure like a locked file), tied to the specific workspace where it happened. **Enclave-GAP and Enclave-SSP don't have this capability yet** — an anticipated failure (a missing file, a bad credential) is always handled the way described above, but a genuine internal bug in those two products currently leaves less of a trace for us to diagnose after the fact than it does in Enclave-AI. Porting Enclave-AI's mechanism to the other two is on our roadmap, not deferred indefinitely.
-- **Enclave-AI and Enclave-SSP** run a self-check of their own access-control and encryption logic every time a workspace is opened, catching corruption or tampering automatically. **Enclave-GAP doesn't have this yet.**
-
-Neither gap changes anything described above under "The short answer" or "What you will never see" — both are about how much diagnostic detail we get after something already failed safely, not about whether it fails safely in the first place.
-
 ## Found and fixed along the way
 
 In the course of reviewing this exact area across all three products (2026-09-14), we found and fixed two real gaps rather than assuming the existing implementation was already clean:

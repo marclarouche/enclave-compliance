@@ -140,15 +140,6 @@ export default function SecurityPage() {
           protection, even with a correct, valid credential. And if something genuinely unexpected happens, you get a
           plain restart message instead of a blank or frozen window with nothing to report to support.
         </p>
-        <p className="body">
-          We found and fixed two real gaps in this exact area during our own 2026-09-14 review, rather than assuming
-          it was already clean: Enclave-SSP&rsquo;s crash-recovery screen was itself showing a raw technical stack
-          trace on screen, and one narrow path in Enclave-AI&rsquo;s report generation bypassed the sanitization
-          boundary above. Both were fixed the same day, before either product had a customer on the affected version
-          — logged in <code>INCIDENT_LOG.md</code> alongside every other real finding, not just the ones a customer
-          happened to find first. The full statement, including what&rsquo;s still being hardened, is in the security
-          package below.
-        </p>
       </section>
 
       <section className="section">
@@ -240,13 +231,6 @@ export default function SecurityPage() {
           <li>Encryption keys sealed with the operating system&rsquo;s native key-protection API (Windows DPAPI, macOS Keychain) — never stored in plaintext.</li>
           <li>Credential files are protected against concurrent-access corruption with a real OS-level file lock, not just in-process synchronization.</li>
         </ul>
-        <p className="body">
-          None of the three products holds a FIPS 140-2/140-3 CMVP-validated cryptographic module — that&rsquo;s a
-          deliberate product-line decision, not an oversight. All three are architecturally scoped to never store
-          CUI, the one condition that would require module validation regardless of deployment; the encryption
-          algorithms themselves are already FIPS-approved. Module-validated cryptography is reserved for
-          Enclave-Enterprise, the networked, multi-tenant product where that guarantee actually matters most.
-        </p>
       </section>
 
       <section className="section">
