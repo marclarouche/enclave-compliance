@@ -125,6 +125,33 @@ export default function SecurityPage() {
       </section>
 
       <section className="section">
+        <span className="kicker">Error handling</span>
+        <p className="body">
+          Every internal error — a database problem, a corrupted file, an unexpected bug — is routed through a
+          single sanitization boundary before anything reaches the screen. You will see a plain description of what
+          failed and a note to contact your administrator if it persists; you will never see a database path, a SQL
+          fragment, a stack trace, or any other internal detail. The real technical detail isn&rsquo;t discarded —
+          it&rsquo;s written to a dated log file in a standard machine location for your own administrator to review,
+          separate from whoever is using the application at the time.
+        </p>
+        <p className="body">
+          If something the application depends on for its own security — its encrypted audit trail, its access
+          controls — isn&rsquo;t working, the application refuses to proceed rather than run without that
+          protection, even with a correct, valid credential. And if something genuinely unexpected happens, you get a
+          plain restart message instead of a blank or frozen window with nothing to report to support.
+        </p>
+        <p className="body">
+          We found and fixed two real gaps in this exact area during our own 2026-09-14 review, rather than assuming
+          it was already clean: Enclave-SSP&rsquo;s crash-recovery screen was itself showing a raw technical stack
+          trace on screen, and one narrow path in Enclave-AI&rsquo;s report generation bypassed the sanitization
+          boundary above. Both were fixed the same day, before either product had a customer on the affected version
+          — logged in <code>INCIDENT_LOG.md</code> alongside every other real finding, not just the ones a customer
+          happened to find first. The full statement, including what&rsquo;s still being hardened, is in the security
+          package below.
+        </p>
+      </section>
+
+      <section className="section">
         <span className="kicker">Architecture &amp; threat model</span>
         <p className="body">
           All three products share the same architecture, so one diagram applies to all of them. It shows every
@@ -253,8 +280,9 @@ export default function SecurityPage() {
       <section className="section">
         <h2 className="h2">Request the full security package.</h2>
         <p className="sub">
-          Dated SAST/DAST reports, full STIG control checklists, per-product threat models, and the NIST 800-53
-          IR-mapped incident response plan — sent directly, for your own vendor security review.
+          Dated SAST/DAST reports, full STIG control checklists, per-product threat models, the NIST 800-53 IR-mapped
+          incident response plan, and the error handling statement — sent directly, for your own vendor security
+          review.
         </p>
         <EmailCapture />
       </section>
