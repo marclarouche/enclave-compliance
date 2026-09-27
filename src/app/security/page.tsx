@@ -5,11 +5,11 @@ import ArchitectureDiagram from "@/components/ArchitectureDiagram";
 export const metadata: Metadata = {
   title: "Application Security",
   description:
-    "How Enclave-GAP, Enclave-SSP, and Enclave-AI are built and verified: DISA ASD STIG-coded development, SAST/DAST security testing, and current compliance status.",
+    "How Enclave-GAP, Enclave-SSP, and Enclave-AI are built and verified: DISA ASD STIG-coded development, SAST and runtime security testing, and current compliance status.",
   openGraph: {
     title: "Application Security",
     description:
-      "How Enclave-GAP, Enclave-SSP, and Enclave-AI are built and verified: DISA ASD STIG-coded development, SAST/DAST security testing, and current compliance status.",
+      "How Enclave-GAP, Enclave-SSP, and Enclave-AI are built and verified: DISA ASD STIG-coded development, SAST and runtime security testing, and current compliance status.",
     url: "/security",
   },
 };
