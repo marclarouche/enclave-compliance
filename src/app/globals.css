@@ -193,7 +193,7 @@ img { display: block; max-width: 100%; }
 .hero { padding: calc(2.5 * var(--leading)) 0 calc(3 * var(--leading)); }
 .hero-grid {
   display: grid; grid-template-columns: 1.1fr 1fr;
-  gap: clamp(28px, 4vw, 64px); align-items: center;
+  gap: clamp(28px, 4vw, 64px); align-items: start;
 }
 @media (max-width: 900px) {
   .hero-grid { grid-template-columns: 1fr; }
@@ -239,6 +239,10 @@ img { display: block; max-width: 100%; }
   display: grid; grid-template-columns: repeat(3, 1fr);
   gap: calc(1.5 * var(--leading)) clamp(28px, 4vw, 64px);
   margin-top: calc(var(--leading) - var(--half));
+}
+.cols-4 { grid-template-columns: repeat(4, 1fr); }
+@media (max-width: 1100px) {
+  .cols-4 { grid-template-columns: repeat(2, 1fr); }
 }
 .col-tag {
   display: block; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase;

@@ -5,11 +5,11 @@ import ArchitectureDiagram from "@/components/ArchitectureDiagram";
 export const metadata: Metadata = {
   title: "Application Security",
   description:
-    "How Enclave-GAP, Enclave-SSP, and Enclave-AI are built and verified: DISA ASD STIG-coded development, SAST and runtime security testing, and current compliance status.",
+    "How Enclave-GAP, Enclave-POL, Enclave-SSP, and Enclave-AI are built and verified: DISA ASD STIG-coded development, SAST and runtime security testing, and current compliance status.",
   openGraph: {
     title: "Application Security",
     description:
-      "How Enclave-GAP, Enclave-SSP, and Enclave-AI are built and verified: DISA ASD STIG-coded development, SAST and runtime security testing, and current compliance status.",
+      "How Enclave-GAP, Enclave-POL, Enclave-SSP, and Enclave-AI are built and verified: DISA ASD STIG-coded development, SAST and runtime security testing, and current compliance status.",
     url: "/security",
   },
 };
@@ -29,9 +29,9 @@ export default function SecurityPage() {
       <section className="section">
         <span className="kicker">Secure development lifecycle</span>
         <p className="body">
-          Enclave-GAP, Enclave-SSP, and Enclave-AI are coded according to DISA Application Security and Development
-          (ASD) STIGs from initial development, not retrofitted before an audit. Each product tracks every
-          applicable control against its own real source code — a control is only marked compliant against an
+          Enclave-GAP, Enclave-POL, Enclave-SSP, and Enclave-AI are coded according to DISA Application Security and
+          Development (ASD) STIGs from initial development, not retrofitted before an audit. Each product tracks
+          every applicable control against its own real source code — a control is only marked compliant against an
           automated test or a live-verified behavior in the running app, never on the basis that the code merely
           exists.
         </p>
@@ -40,7 +40,7 @@ export default function SecurityPage() {
       <section className="section">
         <span className="kicker">Static analysis (SAST)</span>
         <p className="body">
-          A fixed toolchain runs across all three products&rsquo; Rust and TypeScript source. Dependency, lint,
+          A fixed toolchain runs across all four products&rsquo; Rust and TypeScript source. Dependency, lint,
           license-policy, and secret scans all run on every push and pull request in CI and block the build on any
           finding; the full Semgrep sweep below runs on every release and monthly.
         </p>
@@ -91,19 +91,19 @@ export default function SecurityPage() {
           </tbody>
         </table>
         <p className="body">
-          Current result across Enclave-GAP, Enclave-SSP, and Enclave-AI: zero known dependency vulnerabilities,
-          zero Semgrep findings above informational severity, and a clean <code>cargo clippy</code>, ESLint
-          security-rule, and <code>cargo deny</code> pass. A one-time full commit-history secret scan is complete
-          for Enclave-SSP and Enclave-AI (zero real secrets found); Enclave-GAP&rsquo;s history scan is queued —
-          the CI gate itself is already live on all three.
+          Current result across Enclave-GAP, Enclave-POL, Enclave-SSP, and Enclave-AI: zero known dependency
+          vulnerabilities, zero Semgrep findings above informational severity, and a clean <code>cargo clippy</code>,
+          ESLint security-rule, and <code>cargo deny</code> pass. A one-time full commit-history secret scan is
+          complete for Enclave-SSP and Enclave-AI (zero real secrets found); Enclave-GAP&rsquo;s and Enclave-POL&rsquo;s
+          history scans are queued — the CI gate itself is already live on all four.
         </p>
       </section>
 
       <section className="section">
         <span className="kicker">Runtime security review</span>
         <p className="body">
-          Enclave-GAP, Enclave-SSP, and Enclave-AI are offline desktop applications. They serve their UI through
-          Tauri&rsquo;s own custom-protocol asset loader, not a listening web server, and none of the three is
+          Enclave-GAP, Enclave-POL, Enclave-SSP, and Enclave-AI are offline desktop applications. They serve their UI
+          through Tauri&rsquo;s own custom-protocol asset loader, not a listening web server, and none of the four is
           granted an HTTP-client capability. A conventional dynamic scanner (OWASP ZAP, Burp Suite) has no network
           endpoint to point at in production — run against the development server instead, it would test Vite&rsquo;s
           own tooling, not the shipped product, so we don&rsquo;t run one and don&rsquo;t represent one as having
@@ -120,7 +120,7 @@ export default function SecurityPage() {
           <li>Error sanitization — confirming internal detail never reaches the untrusted UI layer.</li>
         </ul>
         <p className="body">
-          All four checks currently pass, unchanged, across Enclave-GAP, Enclave-SSP, and Enclave-AI.
+          All four checks currently pass, unchanged, across Enclave-GAP, Enclave-POL, Enclave-SSP, and Enclave-AI.
         </p>
       </section>
 
@@ -145,7 +145,7 @@ export default function SecurityPage() {
       <section className="section">
         <span className="kicker">Architecture &amp; threat model</span>
         <p className="body">
-          All three products share the same architecture, so one diagram applies to all of them. It shows every
+          All four products share the same architecture, so one diagram applies to all of them. It shows every
           boundary a threat actor would have to cross — the untrusted UI layer, the IPC bridge, the trusted core, and
           the local storage and OS-level protections underneath.
         </p>
@@ -174,6 +174,11 @@ export default function SecurityPage() {
             above.
           </li>
           <li>
+            <strong>Enclave-POL</strong> — generates control-mapped cybersecurity and AI governance policies from an
+            organization&rsquo;s own framework-defined parameters, and stores the resulting policy documents and
+            control mappings in its local database.
+          </li>
+          <li>
             <strong>Enclave-AI</strong> — inventories an organization&rsquo;s AI systems and maps them against NIST
             AI RMF, the EU AI Act, ISO/IEC 42001, GDPR, and state AI laws, with policy evidence stored alongside.
           </li>
@@ -199,6 +204,12 @@ export default function SecurityPage() {
               <td>0 High, 2 Medium</td>
             </tr>
             <tr>
+              <td>Enclave-POL</td>
+              <td>151</td>
+              <td>150</td>
+              <td>0 High, 1 Medium</td>
+            </tr>
+            <tr>
               <td>Enclave-SSP</td>
               <td>146</td>
               <td>145</td>
@@ -213,9 +224,9 @@ export default function SecurityPage() {
           </tbody>
         </table>
         <p className="body">
-          As of September 13, 2026. Zero open High-severity findings across all three products. Remaining Medium
-          items and their remediation plans are documented in each product&rsquo;s STIG status tracker, included in
-          the full package on request.
+          Enclave-GAP, Enclave-SSP, and Enclave-AI as of September 13, 2026; Enclave-POL as of September 21, 2026.
+          Zero open High-severity findings across all four products. Remaining Medium items and their remediation
+          plans are documented in each product&rsquo;s STIG status tracker, included in the full package on request.
         </p>
       </section>
 
@@ -239,7 +250,7 @@ export default function SecurityPage() {
           Each product has its own documented incident response plan covering credential compromise, unauthorized
           data access evidenced in its audit trail, and dependency vulnerabilities — what counts as an incident, how
           it&rsquo;s detected, and how it&rsquo;s handled through containment and recovery. A separate,
-          organization-level plan sits above those three, mapped to the NIST SP 800-53 Rev. 5 Incident Response (IR)
+          organization-level plan sits above those four, mapped to the NIST SP 800-53 Rev. 5 Incident Response (IR)
           control family — policy, training, testing, handling, monitoring, and reporting — including how affected
           customers are notified and supported in meeting their own reporting obligations. Full plans are included
           in the security package below.
@@ -249,7 +260,7 @@ export default function SecurityPage() {
       <section className="section">
         <span className="kicker">Reporting a vulnerability</span>
         <p className="body">
-          Found a security issue in Enclave-GAP, Enclave-SSP, Enclave-AI, or this website? Email{" "}
+          Found a security issue in Enclave-GAP, Enclave-POL, Enclave-SSP, Enclave-AI, or this website? Email{" "}
           <a href="mailto:marc.larouche@gmail.com">marc.larouche@gmail.com</a> with what you found and how to
           reproduce it. We acknowledge every report within 2 business days and investigate it directly — there is no
           intermediary vendor or third-party support desk in between.
@@ -264,9 +275,9 @@ export default function SecurityPage() {
       <section className="section">
         <h2 className="h2">Request the full security package.</h2>
         <p className="sub">
-          Dated SAST/DAST reports, full STIG control checklists, per-product threat models, the NIST 800-53 IR-mapped
-          incident response plan, and the error handling statement — sent directly, for your own vendor security
-          review.
+          Dated SAST reports and runtime security reviews, full STIG control checklists, per-product threat models,
+          the NIST 800-53 IR-mapped incident response plan, and the error handling statement — sent directly, for
+          your own vendor security review.
         </p>
         <EmailCapture />
       </section>

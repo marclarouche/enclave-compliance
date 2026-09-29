@@ -5,7 +5,7 @@ import EmailCapture from "@/components/EmailCapture";
 export const metadata: Metadata = {
   title: { absolute: "Enclave Compliance" },
   description:
-    "Enclave is a compliance toolset built for teams who need to prove control implementation, not just claim it. Three desktop products, one lifecycle: assess the gap, build the documentation, prove the controls.",
+    "Enclave is a compliance toolset built for teams who need to prove control implementation, not just claim it. Four products, one mission: find the gaps, write the policies, document the controls, and prove it with evidence.",
   openGraph: {
     title: "Enclave Compliance",
     description:
@@ -29,7 +29,8 @@ export default function HomePage() {
         <h1 className="display">Prove control implementation. Not just claim it.</h1>
         <p className="sub">
           Enclave is a compliance toolset built for teams who need to prove control implementation, not just claim
-          it. Three desktop products, one lifecycle: assess the gap, build the documentation, prove the controls.
+          it. Four desktop products, one mission: find what&rsquo;s missing, write the policies, document how you
+          implement, and prove it with evidence.
         </p>
         <div className="row">
           <button type="button" className="btn btn-primary">
@@ -42,27 +43,31 @@ export default function HomePage() {
       </section>
 
       <section className="section">
-        <p className="lead">Each tool stands alone. Together, they cover the full compliance lifecycle.</p>
+        <p className="lead">Four tools. One mission: compliance you can prove.</p>
         <div className="steps">
           <span className="step">
-            <span className="step-num">01</span> Assess the gap
+            <span className="step-num">01</span> Assess
           </span>
           <span className="step-arrow">→</span>
           <span className="step">
-            <span className="step-num">02</span> Build the documentation
+            <span className="step-num">02</span> Author
           </span>
           <span className="step-arrow">→</span>
           <span className="step">
-            <span className="step-num">03</span> Prove the controls
+            <span className="step-num">03</span> Document
+          </span>
+          <span className="step-arrow">→</span>
+          <span className="step">
+            <span className="step-num">04</span> Prove
           </span>
         </div>
       </section>
 
       <section className="section">
         <span className="kicker">The desktop products</span>
-        <div className="cols">
+        <div className="cols cols-4">
           <div className="col">
-            <span className="col-tag">Assess — Enclave-GAP</span>
+            <span className="col-tag">Find — Enclave-GAP</span>
             <h3>Enclave-GAP</h3>
             <p>
               Audits your existing policies and procedures against the framework you&rsquo;re targeting and shows
@@ -73,7 +78,19 @@ export default function HomePage() {
             </Link>
           </div>
           <div className="col">
-            <span className="col-tag">Build — Enclave-SSP</span>
+            <span className="col-tag">Write — Enclave-POL</span>
+            <h3>Enclave-POL</h3>
+            <p>
+              Creates assessment-ready cybersecurity and AI governance policies mapped directly to the frameworks
+              you need to satisfy, using your organization&rsquo;s actual parameters and requirements. Runs
+              locally — your sensitive system details stay on your machine.
+            </p>
+            <Link href="/enclave-pol" className="navlink">
+              Read more →
+            </Link>
+          </div>
+          <div className="col">
+            <span className="col-tag">Document — Enclave-SSP</span>
             <h3>Enclave-SSP</h3>
             <p>Writes and documents CMMC Level 2 System Security Plans for defense contractors.</p>
             <Link href="/enclave-ssp" className="navlink">
@@ -81,7 +98,7 @@ export default function HomePage() {
             </Link>
           </div>
           <div className="col">
-            <span className="col-tag">Prove — Enclave-AI</span>
+            <span className="col-tag">Govern — Enclave-AI</span>
             <h3>Enclave-AI</h3>
             <p>
               Maps your AI systems against NIST AI RMF, NIST CSF 2.0, the EU AI Act, ISO/IEC 42001, GDPR, and state
@@ -145,6 +162,11 @@ export default function HomePage() {
               <td>Your existing policies</td>
               <td>Enclave-GAP</td>
             </tr>
+            <tr>
+              <td>NIST 800-53 Rev. 5, NIST 800-171 Rev. 3, CMMC Level 2, NIST CSF 2.0, ISO/IEC 42001, EU AI Act, CIS Controls v8.1 — blended selection supported</td>
+              <td>Policy authoring, mapped to your organization&rsquo;s parameters</td>
+              <td>Enclave-POL</td>
+            </tr>
           </tbody>
         </table>
       </section>
@@ -153,8 +175,8 @@ export default function HomePage() {
         <span className="kicker kicker-accent">Built to DISA STIGs</span>
         <h2 className="h2">All software and systems are coded according to DISA STIGs.</h2>
         <p className="body">
-          Enclave-GAP, Enclave-SSP, and Enclave-AI have each completed SAST and DAST security testing with zero
-          open findings.
+          Enclave-GAP, Enclave-POL, Enclave-SSP, and Enclave-AI have each completed SAST and runtime security
+          testing with zero open findings.
         </p>
       </section>
 
@@ -179,7 +201,9 @@ export default function HomePage() {
 
       <section className="section">
         <h2 className="h2">Let&rsquo;s talk compliance.</h2>
-        <p className="sub">Enclave-GAP, Enclave-SSP, and Enclave-AI — the full compliance lifecycle, one toolset.</p>
+        <p className="sub">
+          Enclave-GAP, Enclave-POL, Enclave-SSP, and Enclave-AI — the full compliance lifecycle, one toolset.
+        </p>
         <EmailCapture />
       </section>
     </div>

@@ -9,6 +9,7 @@ const NAV_LINKS = [
   { href: "/enclave-ssp", label: "Enclave-SSP" },
   { href: "/enclave-ai", label: "Enclave-AI" },
   { href: "/enclave-gap", label: "Enclave-GAP" },
+  { href: "/enclave-pol", label: "Enclave-POL" },
   { href: "/enterprise", label: "Enterprise" },
   { href: "/security", label: "Security" },
 ];
