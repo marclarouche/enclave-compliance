@@ -24,7 +24,7 @@ export default function PrivacyPage() {
         <p className="body">
           This policy explains what information enclavecompliance.com collects when you visit this site or submit
           the &ldquo;Talk to us&rdquo; form, and how that information is used. It covers this marketing site only —
-          not the Enclave-GAP, Enclave-SSP, Enclave-AI, or Enclave-Enterprise applications themselves, which are
+          not the Enclave-GAP, Enclave-POL, Enclave-SSP, Enclave-AI, or Enclave-Enterprise applications themselves, which are
           governed by their own terms.
         </p>
       </section>

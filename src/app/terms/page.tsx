@@ -31,8 +31,8 @@ export default function TermsPage() {
       <section className="section">
         <h2>Use of the site</h2>
         <p className="body">
-          This site is provided for the purpose of learning about and inquiring about Enclave-GAP, Enclave-SSP,
-          Enclave-AI, and Enclave-Enterprise. You agree not to misuse the site, including attempting to disrupt it
+          This site is provided for the purpose of learning about and inquiring about Enclave-GAP, Enclave-POL,
+          Enclave-SSP, Enclave-AI, and Enclave-Enterprise. You agree not to misuse the site, including attempting to disrupt it
           or access it in ways not permitted by these terms.
         </p>
       </section>
@@ -50,7 +50,7 @@ export default function TermsPage() {
       <section className="section">
         <h2>Intellectual property</h2>
         <p className="body">
-          The Enclave Compliance name, the Enclave-GAP, Enclave-SSP, Enclave-AI, and Enclave-Enterprise names, and
+          The Enclave Compliance name, the Enclave-GAP, Enclave-POL, Enclave-SSP, Enclave-AI, and Enclave-Enterprise names, and
           the content of this site belong to their respective owners and may not be reproduced without permission.
         </p>
       </section>
