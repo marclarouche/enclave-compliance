@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-const NOTIFY_TO = process.env.CONTACT_NOTIFICATION_EMAIL ?? "marc.larouche@gmail.com";
+const NOTIFY_TO = process.env.CONTACT_NOTIFICATION_EMAIL ?? "cyberlifecoach@proton.me";
 const NOTIFY_FROM = process.env.RESEND_FROM_EMAIL ?? "Enclave Compliance <onboarding@resend.dev>";
 
 export async function POST(request: Request) {

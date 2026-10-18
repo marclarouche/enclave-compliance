@@ -261,7 +261,7 @@ export default function SecurityPage() {
         <span className="kicker">Reporting a vulnerability</span>
         <p className="body">
           Found a security issue in Enclave-GAP, Enclave-POL, Enclave-SSP, Enclave-AI, or this website? Email{" "}
-          <a href="mailto:marc.larouche@gmail.com">marc.larouche@gmail.com</a> with what you found and how to
+          <a href="mailto:cyberlifecoach@proton.me">cyberlifecoach@proton.me</a> with what you found and how to
           reproduce it. We acknowledge every report within 2 business days and investigate it directly — there is no
           intermediary vendor or third-party support desk in between.
         </p>

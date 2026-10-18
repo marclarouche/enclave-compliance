@@ -76,7 +76,7 @@ export default function PrivacyPage() {
         <h2>Contact</h2>
         <p className="body">
           Questions about this policy can be sent to{" "}
-          <a href="mailto:marc.larouche@gmail.com">marc.larouche@gmail.com</a>.
+          <a href="mailto:cyberlifecoach@proton.me">cyberlifecoach@proton.me</a>.
         </p>
       </section>
     </div>
